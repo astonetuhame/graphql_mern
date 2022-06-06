@@ -89,6 +89,16 @@ const mutation = new GraphQLObjectType({
 
                 return client.save()
             }
+        },
+        //Delete client
+        deleteClient: {
+            type: ClientType,
+            args: {
+                id: {type: GraphQLNonNull(GraphQLID)},
+            },
+            resolve(parent, args){
+                return Client.findByIdAndRemove(args.id)
+            }
         }
     }
 })
@@ -100,6 +110,13 @@ const mutation = new GraphQLObjectType({
 //       name
 //       email
 //       phone
+//     }
+//   }
+
+//deleting a mutation
+// mutation {
+//     deleteClient(id: "888888"){
+//       name
 //     }
 //   }
 
