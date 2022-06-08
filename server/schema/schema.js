@@ -1,4 +1,4 @@
-//const { projects, clients} = require('../sample.js')
+const { projects, clients} = require('../sample.js')
 
 // Mongoose models
 const Project = require('../models/Project')
